@@ -1,5 +1,7 @@
 # Deepansh Dubey — Portfolio
 
+**Live site:** https://drdeepanshdubey.github.io
+
 A single-file, dependency-light personal portfolio. Dark-mode, motion-driven,
 built around a pharma/computational-science visual language (cerulean accent,
 molecular-node hero canvas). No build step — just `index.html`.
@@ -55,6 +57,7 @@ Everything lives in `index.html`:
 - **About / stats** — `<section id="about">`.
 - **Expertise cards** — `<section id="expertise">`.
 - **Work bento** — `<section id="work">` (each `<article class="work-card">`).
+- **AI projects** — `<section id="ai-projects">` (Executive Programme in AI projects, each linked to its GitHub repo).
 - **Experience timeline** — `<section id="experience">`.
 - **Education** — `<section id="education">`.
 - **Contact / footer** — `<section id="contact">`.
