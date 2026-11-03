@@ -236,6 +236,11 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9000;o
 .wc-roles span{font-family:var(--font-mono);font-size:0.66rem;color:var(--color-text-muted);padding:5px 11px;border:1px solid var(--color-border);border-radius:20px}
 .wc-link{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-mono);font-size:0.72rem;color:var(--color-accent);margin-top:20px;opacity:0;transform:translateY(8px);transition:opacity var(--duration-base),transform var(--duration-base)}
 .work-card:hover .wc-link{opacity:1;transform:translateY(0)}
+/* AI projects: links always visible (no hover on touch devices) */
+.ai-grid .wc-link{opacity:1;transform:none}
+.ai-grid a.work-card{color:inherit}
+.ai-grid .wc-badge{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.06em;color:var(--color-text-secondary);margin-top:18px}
+.ai-grid .wc-badge i{width:6px;height:6px;border-radius:50%;background:#34d399;display:inline-block}
 
 /* ════════════ 14. EXPERIENCE TIMELINE ════════════ */
 .timeline{position:relative;padding-left:clamp(28px,4vw,56px);max-width:920px}
@@ -348,6 +353,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9000;o
       <a href="#about" data-nav>About</a>
       <a href="#expertise" data-nav>Expertise</a>
       <a href="#work" data-nav>Work</a>
+      <a href="#ai-projects" data-nav>AI</a>
       <a href="#experience" data-nav>Path</a>
       <a href="#contact" class="nav-cta">Get in touch</a>
     </div>
@@ -360,8 +366,9 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9000;o
   <a href="#about" data-mnav><span>01</span>About</a>
   <a href="#expertise" data-mnav><span>02</span>Expertise</a>
   <a href="#work" data-mnav><span>03</span>Work</a>
-  <a href="#experience" data-mnav><span>04</span>Path</a>
-  <a href="#contact" data-mnav><span>05</span>Contact</a>
+  <a href="#ai-projects" data-mnav><span>04</span>AI</a>
+  <a href="#experience" data-mnav><span>05</span>Path</a>
+  <a href="#contact" data-mnav><span>06</span>Contact</a>
 </div>
 
 <!-- HERO -->
@@ -476,7 +483,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9000;o
         <div class="sc-i">04 — The toolchain</div>
         <h3>Data &amp; Engineering</h3>
         <p>The software layer underneath the science — analysis, automation, and applied AI.</p>
-        <div class="tags"><span>Python</span><span>SQL</span><span>Data Visualisation</span><span>RAG / LLM Workflows</span><span>Scientific Writing</span></div>
+        <div class="tags"><span>Python</span><span>SQL</span><span>Data Visualisation</span><span>RAG / LLM Workflows</span><span>AI Agents</span><span>n8n Automation</span><span>Scientific Writing</span></div>
       </article>
     </div>
   </div>
@@ -558,9 +565,150 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9000;o
   </div>
 </section>
 
+<!-- AI PROJECTS -->
+<section class="section" id="ai-projects">
+  <span class="section-index">04 / AI Projects</span>
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Applied AI in Pharma</span>
+      <h2>Agents, dashboards and automation — built and shipped.</h2>
+    </div>
+
+    <div class="work-grid ai-grid">
+      <article class="work-card feature reveal" data-tilt data-tilt-max="5" data-tilt-glare data-tilt-max-glare="0.1">
+        <div class="wc-glow" aria-hidden="true"></div>
+        <div class="wc-top">
+          <span class="wc-cat">Certified · Payaam Vohra Classes</span>
+          <span class="wc-year">2026</span>
+        </div>
+        <div class="wc-body">
+          <h3>Executive Programme in Artificial Intelligence</h3>
+          <p>A build-first programme focused on AI in the pharmaceutical industry. Every module ended in a deployed project — from a first RAG + SQL agent, to FDA-readiness, market-intelligence and corporate-strategy analyses, an integrated C-suite Go/No-Go package, a personalised drug-launch agent, and an n8n workflow automation for a healthcare gap.</p>
+          <div class="wc-roles"><span>AI Agents</span><span>RAG</span><span>n8n</span><span>Pharma Analytics</span></div>
+          <div class="wc-badge"><i></i>Certificate of Completion · 26/07/2026</div>
+        </div>
+      </article>
+
+      <a class="work-card reveal reveal-d1" href="https://github.com/drdeepanshdubey/rag-sql-agent" target="_blank" rel="noopener" data-tilt data-tilt-max="6">
+        <div class="wc-glow" aria-hidden="true"></div>
+        <div class="wc-top"><span class="wc-cat">Module 1 · First AI Agent</span><span class="wc-year">2026</span></div>
+        <div class="wc-body">
+          <h3>RAG + SQL Agent</h3>
+          <p>A retrieval-augmented agent that answers plain-language questions over structured data by generating SQL.</p>
+          <span class="wc-link">View on GitHub &#8599;</span>
+        </div>
+      </a>
+
+      <a class="work-card reveal reveal-d2" href="https://github.com/drdeepanshdubey/financial-dashboard" target="_blank" rel="noopener" data-tilt data-tilt-max="6">
+        <div class="wc-glow" aria-hidden="true"></div>
+        <div class="wc-top"><span class="wc-cat">Module 1 · Dashboard</span><span class="wc-year">2026</span></div>
+        <div class="wc-body">
+          <h3>Financial KPI Dashboard</h3>
+          <p>An interactive dashboard turning a raw financial dataset into KPIs and visualisations.</p>
+          <span class="wc-link">View on GitHub &#8599;</span>
+        </div>
+      </a>
+
+      <a class="work-card reveal reveal-d1" href="https://github.com/drdeepanshdubey/heor-dashboard" target="_blank" rel="noopener" data-tilt data-tilt-max="6">
+        <div class="wc-glow" aria-hidden="true"></div>
+        <div class="wc-top"><span class="wc-cat">Module 1 · HEOR</span><span class="wc-year">2026</span></div>
+        <div class="wc-body">
+          <h3>HEOR Analysis Dashboard</h3>
+          <p>A complete health-economics and outcomes-research analysis, presented as an interactive dashboard.</p>
+          <span class="wc-link">View on GitHub &#8599;</span>
+        </div>
+      </a>
+
+      <a class="work-card reveal reveal-d2" href="https://github.com/drdeepanshdubey/pharma-clinical-fda-dashboard" target="_blank" rel="noopener" data-tilt data-tilt-max="6">
+        <div class="wc-glow" aria-hidden="true"></div>
+        <div class="wc-top"><span class="wc-cat">Module 2 · Clinical</span><span class="wc-year">2026</span></div>
+        <div class="wc-body">
+          <h3>Clinical Data Review &amp; FDA Readiness</h3>
+          <p>A 30,000-subject trial review covering data quality, safety signals and inspection readiness.</p>
+          <span class="wc-link">View on GitHub &#8599;</span>
+        </div>
+      </a>
+
+      <a class="work-card reveal reveal-d3" href="https://github.com/drdeepanshdubey/pharma-market-intelligence-dashboard" target="_blank" rel="noopener" data-tilt data-tilt-max="6">
+        <div class="wc-glow" aria-hidden="true"></div>
+        <div class="wc-top"><span class="wc-cat">Module 2 · Market</span><span class="wc-year">2026</span></div>
+        <div class="wc-body">
+          <h3>Market Intelligence Dashboard</h3>
+          <p>An IQVIA-style pharma market research dashboard: sizing, competitors and launch readiness.</p>
+          <span class="wc-link">View on GitHub &#8599;</span>
+        </div>
+      </a>
+
+      <a class="work-card reveal reveal-d1" href="https://github.com/drdeepanshdubey/pharma-strategy-dashboard" target="_blank" rel="noopener" data-tilt data-tilt-max="6">
+        <div class="wc-glow" aria-hidden="true"></div>
+        <div class="wc-top"><span class="wc-cat">Module 2 · Strategy</span><span class="wc-year">2026</span></div>
+        <div class="wc-body">
+          <h3>Corporate Strategy Dashboard</h3>
+          <p>A McKinsey-style pharma corporate strategy board report with a 30-60-90 plan and roadmap.</p>
+          <span class="wc-link">View on GitHub &#8599;</span>
+        </div>
+      </a>
+
+      <a class="work-card reveal reveal-d2" href="https://github.com/drdeepanshdubey/pharma-grand-finale-dashboard" target="_blank" rel="noopener" data-tilt data-tilt-max="6">
+        <div class="wc-glow" aria-hidden="true"></div>
+        <div class="wc-top"><span class="wc-cat">Grand Finale</span><span class="wc-year">2026</span></div>
+        <div class="wc-body">
+          <h3>Integrated C-Suite Decision Package</h3>
+          <p>Clinical, market and strategy data combined into one executive launch recommendation.</p>
+          <span class="wc-link">View on GitHub &#8599;</span>
+        </div>
+      </a>
+
+      <a class="work-card reveal reveal-d3" href="https://github.com/drdeepanshdubey/kisunla-launch-strategist" target="_blank" rel="noopener" data-tilt data-tilt-max="6">
+        <div class="wc-glow" aria-hidden="true"></div>
+        <div class="wc-top"><span class="wc-cat">Custom Agent</span><span class="wc-year">2026</span></div>
+        <div class="wc-body">
+          <h3>Kisunla Launch Strategist</h3>
+          <p>A personalised AI agent that develops a drug-specific launch strategy for Kisunla.</p>
+          <span class="wc-link">View on GitHub &#8599;</span>
+        </div>
+      </a>
+
+      <a class="work-card reveal reveal-d1" href="https://github.com/drdeepanshdubey/label-lag-sentinel" target="_blank" rel="noopener" data-tilt data-tilt-max="6">
+        <div class="wc-glow" aria-hidden="true"></div>
+        <div class="wc-top"><span class="wc-cat">Custom Agent</span><span class="wc-year">2026</span></div>
+        <div class="wc-body">
+          <h3>Label Lag Sentinel</h3>
+          <p>A pharma AI agent designed around a gap identified in the industry.</p>
+          <span class="wc-link">View on GitHub &#8599;</span>
+        </div>
+      </a>
+
+      <a class="work-card reveal reveal-d2" href="https://github.com/drdeepanshdubey/rural-healthcare-agent" target="_blank" rel="noopener" data-tilt data-tilt-max="6">
+        <div class="wc-glow" aria-hidden="true"></div>
+        <div class="wc-top"><span class="wc-cat">Multi-Agent · Capstone</span><span class="wc-year">Google AI</span></div>
+        <div class="wc-body">
+          <h3>Rural Healthcare Agent</h3>
+          <p>A five-agent system improving healthcare access in rural Madhya Pradesh, with eSanjeevani telemedicine integration.</p>
+          <span class="wc-link">View on GitHub &#8599;</span>
+        </div>
+      </a>
+
+      <article class="work-card reveal reveal-d3" data-tilt data-tilt-max="6">
+        <div class="wc-glow" aria-hidden="true"></div>
+        <div class="wc-top"><span class="wc-cat">Automation</span><span class="wc-year">2026</span></div>
+        <div class="wc-body">
+          <h3>n8n Workflow Architect</h3>
+          <p>A custom skill that designs importable n8n workflow JSON, applied to a pharma and healthcare automation gap.</p>
+          <div class="wc-roles"><span>n8n</span><span>Skills</span><span>Automation</span></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="reveal" style="margin-top:var(--space-6)">
+      <a href="https://github.com/drdeepanshdubey?tab=repositories" target="_blank" rel="noopener" class="btn btn--ghost" data-magnetic>All repositories <span class="arr">&#8594;</span></a>
+    </div>
+  </div>
+</section>
+
 <!-- EXPERIENCE -->
 <section class="section" id="experience">
-  <span class="section-index">04 / Path</span>
+  <span class="section-index">05 / Path</span>
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">Experience</span>
@@ -619,7 +767,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9000;o
 
 <!-- EDUCATION -->
 <section class="section" id="education">
-  <span class="section-index">05 / Credentials</span>
+  <span class="section-index">06 / Credentials</span>
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">Education &amp; Recognition</span>
@@ -643,6 +791,15 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9000;o
 
       <article class="edu-card span2 reveal reveal-d2">
         <div>
+          <div class="ec-year">July 2026</div>
+          <h3>Executive Programme in Artificial Intelligence</h3>
+          <div class="ec-sub">Payaam Vohra Classes · ISO 9001:2015 · AI in Pharma</div>
+        </div>
+        <div class="pubmeta">Certificate of Completion<br>Achieved 26/07/2026 · <a href="#ai-projects">See projects</a></div>
+      </article>
+
+      <article class="edu-card span2 reveal reveal-d2">
+        <div>
           <div class="ec-year">Peer-Reviewed</div>
           <h3>Two IEEE Publications</h3>
           <div class="ec-sub">Clinical Trial Optimization · AI-Driven Drug Repurposing</div>
@@ -655,7 +812,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9000;o
 
 <!-- CONTACT -->
 <section class="section contact" id="contact">
-  <span class="section-index">06 / Contact</span>
+  <span class="section-index">07 / Contact</span>
   <div class="glow glow--a glow--contact" aria-hidden="true"></div>
   <div class="container contact-inner">
     <span class="eyebrow reveal">Let&#39;s talk</span>
@@ -817,7 +974,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9000;o
 
   /* ── active nav link ── */
   const navLinks=document.querySelectorAll('.nav-links a[data-nav]');
-  const sections=['#about','#expertise','#work','#experience'].map(s=>document.querySelector(s));
+  const sections=['#about','#expertise','#work','#ai-projects','#experience'].map(s=>document.querySelector(s));
   if('IntersectionObserver' in window){
     const sio=new IntersectionObserver((entries)=>{
       entries.forEach(en=>{
