@@ -242,6 +242,24 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9000;o
 .ai-grid .wc-badge{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.06em;color:var(--color-text-secondary);margin-top:18px}
 .ai-grid .wc-badge i{width:6px;height:6px;border-radius:50%;background:#34d399;display:inline-block}
 
+/* PBPK series highlight */
+.series-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-3)}
+.series-card{position:relative;padding:var(--space-8) var(--space-4) var(--space-6);border-radius:var(--radius-lg);background:linear-gradient(155deg,var(--color-surface-2),var(--color-surface-1));border:1px solid rgba(0,180,216,0.3);overflow:hidden;transition:transform var(--duration-base) var(--ease-out-expo),box-shadow var(--duration-base),border-color var(--duration-base)}
+.series-card::before{content:"";position:absolute;top:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,var(--color-accent),transparent)}
+.series-card:hover{transform:translateY(-4px);border-color:rgba(0,180,216,0.55);box-shadow:0 18px 50px rgba(0,0,0,0.4),0 0 40px var(--color-accent-glow)}
+.series-card .live{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;color:#34d399}
+.series-card .live i{width:7px;height:7px;border-radius:50%;background:#34d399;box-shadow:0 0 12px #34d39988;display:inline-block;animation:pulse 2.2s ease-in-out infinite}
+.series-card .sc-i{font-family:var(--font-mono);font-size:0.72rem;color:var(--color-accent);letter-spacing:0.1em;margin-top:18px}
+.series-card h3{font-size:clamp(1.7rem,2.8vw,2.3rem);margin:12px 0 18px;letter-spacing:-0.015em}
+.series-card p{font-size:0.98rem;color:var(--color-text-secondary);margin-bottom:22px}
+.series-next{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:var(--space-6)}
+.series-next .sn-label{font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--color-accent);margin-right:6px}
+.series-next span:not(.sn-label){font-family:var(--font-mono);font-size:0.72rem;color:var(--color-text-secondary);padding:7px 13px;border-radius:20px;border:1px solid var(--color-border);background:rgba(255,255,255,0.02)}
+.series-ribbon{display:inline-flex;align-items:center;gap:12px;flex-wrap:wrap;max-width:100%;margin-top:var(--space-4);padding:11px 18px;border-radius:var(--radius-sm);border:1px solid rgba(0,180,216,0.35);background:rgba(0,180,216,0.07);font-family:var(--font-mono);font-size:0.74rem;letter-spacing:0.03em;line-height:1.45;color:var(--color-text-primary);transition:border-color var(--duration-fast),background var(--duration-fast)}
+.series-ribbon:hover{border-color:var(--color-accent);background:rgba(0,180,216,0.12)}
+.series-ribbon .rdot{width:7px;height:7px;border-radius:50%;background:#34d399;box-shadow:0 0 12px #34d39988;flex:none;animation:pulse 2.2s ease-in-out infinite}
+@media (max-width:768px){.series-grid{grid-template-columns:1fr}}
+
 /* ════════════ 14. EXPERIENCE TIMELINE ════════════ */
 .timeline{position:relative;padding-left:clamp(28px,4vw,56px);max-width:920px}
 .tl-track{position:absolute;left:6px;top:8px;bottom:8px;width:1px;background:var(--color-border)}
@@ -351,6 +369,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9000;o
     <a href="#hero" class="nav-brand" aria-label="Deepansh Dubey — home"><i></i>Deepansh Dubey</a>
     <div class="nav-links">
       <a href="#about" data-nav>About</a>
+      <a href="#pbpk-series" data-nav>PBPK</a>
       <a href="#expertise" data-nav>Expertise</a>
       <a href="#work" data-nav>Work</a>
       <a href="#ai-projects" data-nav>AI</a>
@@ -364,11 +383,12 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9000;o
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
   <a href="#about" data-mnav><span>01</span>About</a>
-  <a href="#expertise" data-mnav><span>02</span>Expertise</a>
-  <a href="#work" data-mnav><span>03</span>Work</a>
-  <a href="#ai-projects" data-mnav><span>04</span>AI</a>
-  <a href="#experience" data-mnav><span>05</span>Path</a>
-  <a href="#contact" data-mnav><span>06</span>Contact</a>
+  <a href="#pbpk-series" data-mnav><span>02</span>PBPK</a>
+  <a href="#expertise" data-mnav><span>03</span>Expertise</a>
+  <a href="#work" data-mnav><span>04</span>Work</a>
+  <a href="#ai-projects" data-mnav><span>05</span>AI</a>
+  <a href="#experience" data-mnav><span>06</span>Path</a>
+  <a href="#contact" data-mnav><span>07</span>Contact</a>
 </div>
 
 <!-- HERO -->
@@ -393,6 +413,10 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9000;o
     </div>
 
     <p class="hero-tagline reveal-hero text-body">Pharmaceutical science from two directions at once — molecular formulation at the bench, and the health-economic evidence that decides whether a therapy reaches a patient.</p>
+
+    <div class="reveal-hero">
+      <a href="#pbpk-series" class="series-ribbon" data-magnetic><span class="rdot"></span><span>Now running on LinkedIn: 30 Days of PBPK Modelling &middot; 30 Days of Advanced PBPK Modelling</span><span class="arr">&#8594;</span></a>
+    </div>
 
     <div class="hero-cta reveal-hero">
       <a href="#work" class="btn btn--primary" data-magnetic>View the work <span class="arr">&#8594;</span></a>
@@ -448,9 +472,50 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9000;o
   </div>
 </section>
 
+<!-- PBPK SERIES -->
+<section class="section" id="pbpk-series">
+  <span class="section-index">02 / PBPK Series</span>
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Now Running on LinkedIn</span>
+      <h2>Two 30-day series teaching PBPK modelling, in public.</h2>
+    </div>
+
+    <div class="series-grid">
+      <article class="series-card reveal" data-tilt data-tilt-max="4">
+        <div class="live"><i></i>Running on LinkedIn</div>
+        <div class="sc-i">Series 01 — GastroPlus 9.9</div>
+        <h3>30 Days of PBPK Modelling</h3>
+        <p>A day-by-day walk through the GastroPlus workflow — the Gut Physiology and Pharmacokinetics tabs, the PBPK Model Editor, the PEAR Physiology window and Kp settings — grounded in six paper replications from my NIPER Mohali training.</p>
+        <div class="tags"><span>#30DaysOfPBPK</span><span>GastroPlus 9.9</span><span>Gut Physiology</span><span>Model Editor</span></div>
+      </article>
+
+      <article class="series-card reveal reveal-d1" data-tilt data-tilt-max="4">
+        <div class="live"><i></i>Running on LinkedIn</div>
+        <div class="sc-i">Series 02 — GastroPlus X.2 (10.2)</div>
+        <h3>30 Days of Advanced PBPK Modelling</h3>
+        <p>Started 2 October 2026 on GastroPlus X.2, opening with a 9.9 versus X.2 comparison. Public proof of work, pitched so learners from non-pharma and non-life-science backgrounds can follow it and see a career path, while staying useful to industry and academia.</p>
+        <div class="tags"><span>#30DaysOfAdvancedPBPK</span><span>GastroPlus X.2</span><span>PBPK Notes newsletter</span></div>
+      </article>
+    </div>
+
+    <div class="series-next reveal">
+      <span class="sn-label">What&#39;s next</span>
+      <span>Free PBPK course for students</span>
+      <span>PBBM services for generics</span>
+      <span>AI-powered PBPK/PBBM platform</span>
+    </div>
+
+    <div class="reveal" style="display:flex;flex-wrap:wrap;gap:14px;margin-top:var(--space-6)">
+      <a href="https://www.linkedin.com/in/deepanshdubey1" target="_blank" rel="noopener" class="btn btn--primary" data-magnetic>Follow the series on LinkedIn <span class="arr">&#8599;</span></a>
+      <a href="#work" class="btn btn--ghost" data-magnetic>See the PBPK work <span class="arr">&#8594;</span></a>
+    </div>
+  </div>
+</section>
+
 <!-- EXPERTISE -->
 <section class="section" id="expertise">
-  <span class="section-index">02 / Expertise</span>
+  <span class="section-index">03 / Expertise</span>
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">Capabilities</span>
@@ -491,7 +556,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9000;o
 
 <!-- WORK -->
 <section class="section" id="work">
-  <span class="section-index">03 / Work</span>
+  <span class="section-index">04 / Work</span>
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">Selected Work</span>
@@ -627,7 +692,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9000;o
 
 <!-- AI PROJECTS -->
 <section class="section" id="ai-projects">
-  <span class="section-index">04 / AI Projects</span>
+  <span class="section-index">05 / AI Projects</span>
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">Applied AI in Pharma</span>
@@ -768,7 +833,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9000;o
 
 <!-- EXPERIENCE -->
 <section class="section" id="experience">
-  <span class="section-index">05 / Path</span>
+  <span class="section-index">06 / Path</span>
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">Experience</span>
@@ -853,7 +918,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9000;o
 
 <!-- EDUCATION -->
 <section class="section" id="education">
-  <span class="section-index">06 / Credentials</span>
+  <span class="section-index">07 / Credentials</span>
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">Education &amp; Recognition</span>
@@ -921,7 +986,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9000;o
 
 <!-- CONTACT -->
 <section class="section contact" id="contact">
-  <span class="section-index">07 / Contact</span>
+  <span class="section-index">08 / Contact</span>
   <div class="glow glow--a glow--contact" aria-hidden="true"></div>
   <div class="container contact-inner">
     <span class="eyebrow reveal">Let&#39;s talk</span>
@@ -1083,7 +1148,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9000;o
 
   /* ── active nav link ── */
   const navLinks=document.querySelectorAll('.nav-links a[data-nav]');
-  const sections=['#about','#expertise','#work','#ai-projects','#experience'].map(s=>document.querySelector(s));
+  const sections=['#about','#pbpk-series','#expertise','#work','#ai-projects','#experience'].map(s=>document.querySelector(s));
   if('IntersectionObserver' in window){
     const sio=new IntersectionObserver((entries)=>{
       entries.forEach(en=>{
